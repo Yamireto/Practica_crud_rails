@@ -1,5 +1,8 @@
+<h2> Estos son los cursos que tenemos actualmente </h2>
 <ul>
     <%  @courses.each do |course|%>
-        <li> <%= course.title%> </li>
+        <%# <li> <%= course.title%> <%# </li> %>
+           <%# <%= link_to course.title, show_course_(id:course.id)%>
+            <li> <%= link_to course.title, courses_show_path(id:course.id)%> </li>
     <% end %>
 </ul>

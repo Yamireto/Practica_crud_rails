@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_action :set_course, only: [:show, :edit]
+  # after_action :
   def index
     @courses = Course.where(visible:true)
   end
@@ -13,7 +15,19 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
 
+  def show
+    #@course = Course.find params[:id]
+  end
+  
+  def edit
+    #@course = Course.find params[:id]
+  end
+
   private
+
+  def set_course
+    @course = Course.find params[:id]
+  end
 
   def course_params
     params.required(:course).permit(:title, :description, :visible, :published)
