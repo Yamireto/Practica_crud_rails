@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit]
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
   # after_action :
   def index
     @courses = Course.where(visible:true)
@@ -21,6 +21,16 @@ class CoursesController < ApplicationController
   
   def edit
     #@course = Course.find params[:id]
+  end
+
+  def update
+    @course.update course_params
+    redirect_to courses_path
+  end
+
+  def destroy
+    @course.delete
+    redirect_to courses_path
   end
 
   private

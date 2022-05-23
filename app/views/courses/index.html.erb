@@ -5,4 +5,7 @@
            <%# <%= link_to course.title, show_course_(id:course.id)%>
             <li> <%= link_to course.title, courses_show_path(id:course.id)%> </li>
     <% end %>
+
 </ul>
+
+<%= link_to 'Crear curso', courses_new_path %>
