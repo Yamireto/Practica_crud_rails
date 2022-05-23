@@ -10,6 +10,19 @@ Rails.application.routes.draw do
 
   delete 'courses/:id', to: 'courses#destroy', as: 'courses_delete'
 
+
+  #Aqui comienza en ejercicio de video
+  
+  get 'videos/', to: 'videos#index'
+  get 'videos/new', as: 'videos_new'
+  get 'videos/:id', to: 'videos#show', as: 'videos_show'
+  get 'videos/:id/edit', to: 'videos#edit', as: 'videos_edit'
+
+  post 'videos/', to: 'videos#create', as: 'videos_create'
+  patch 'videos/:id/', to: 'videos#update', as: 'videos_update'
+
+  delete 'videos/:id', to: 'videos#destroy', as: 'videos_delete'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

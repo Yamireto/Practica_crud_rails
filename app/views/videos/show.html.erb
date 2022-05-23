@@ -1,0 +1,4 @@
+<h2><%= @video.title %></h2>
+<p> <%= @video.description %></p>
+<%= button_to 'Editar', videos_edit_path(id:@video.id), method: :get %>
+<%= button_to 'Eliminar', videos_delete_path(id:@video.id), method: :delete, form: { data: { turbo_confirm: "¿Estás seguro?" } } %>

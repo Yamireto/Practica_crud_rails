@@ -1,0 +1,11 @@
+<h2> Estos son los vídeos que tenemos actualmente </h2>
+<ul>
+    <%  @videos.each do |video|%>
+        <%# <li> <%= video.title%> <%# </li> %>
+           <%# <%= link_to video.title, show_video_(id:video.id)%>
+            <li> <%= link_to video.title, videos_show_path(id:video.id)%> </li>
+    <% end %>
+
+</ul>
+
+<%= link_to 'Crear vídeo', videos_new_path %>
