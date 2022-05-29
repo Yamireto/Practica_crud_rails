@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+ # get 'categories/index'
+  #get 'categories/new'
+  #post 'categories/create'
+  #get 'categories/show'
+  #get 'categories/edit'
+  #patch 'categories/update'
+  #delete 'categories/destroy'
+  resources :categories
+
+  #Aquí comienza el ejercicio cursos
   get 'courses/', to: 'courses#index'
   get 'courses/new', as: 'courses_new'
   #get 'courses/:id', to: 'courses#show', as: 'show_course'
